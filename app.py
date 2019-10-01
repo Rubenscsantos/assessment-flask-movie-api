@@ -39,7 +39,11 @@ class MovieGenres(Resource):
         else:
             return "user_id is invalid"
 
+class HealthCheck(Resource):
+    def get(self):
+        return "Health check"
 
+api.add_resource(HealthCheck, '/')
 api.add_resource(MovieGenres, '/api/v1/filmes/generos')
 
 if __name__ == '__main__':
