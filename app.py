@@ -1,6 +1,7 @@
 from os import getenv
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
+from flask_swagger_ui import get_swaggerui_blueprint
 import requests
 import json
 
@@ -27,4 +28,5 @@ class MovieGenres(Resource):
 api.add_resource(MovieGenres, '/api/v1/filmes/generos')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True,host='0.0.0.0',port=port)
