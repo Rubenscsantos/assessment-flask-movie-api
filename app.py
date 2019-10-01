@@ -24,7 +24,7 @@ class MovieGenres(Resource):
             return "user_id is invalid"
 
 
-api.add_resource(MovieGenres, '/filmes/generos')
+api.add_resource(MovieGenres, '/api/v1/filmes/generos')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
