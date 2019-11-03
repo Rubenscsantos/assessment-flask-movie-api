@@ -1,6 +1,6 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+FROM python:3.6.8-alpine3.8
+
+RUN apk add -U -q --no-cache libxml2-dev libxslt-dev gcc make musl-dev linux-headers tzdata postgresql-dev
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
